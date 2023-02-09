@@ -14,14 +14,29 @@ spring:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     enabled:    true
     drop-first: false
+  kafka:
+    properties:
+      acks:                         all
+      retries:                      0
+      spring.json.trusted.packages: kz.satbayev.diplom.model.kafka
+    consumer:
+      bootstrap-servers:  localhost:9092
+      auto-offset-reset:  earliest
+      key-deserializer:   org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id:           ${spring.application.name}
+      enable-auto-commit: true
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer:    org.apache.kafka.common.serialization.StringSerializer
+      value-serializer:  org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        linger.ms: 100
 
 logging:
   level:
-    org:
-      springframework:
-        orm:
-          jpa:
-            JpaTransactionManager=DEBUG
+    org.springframework.orm.jpa:     DEBUG
+    org.springframework.transaction: DEBUG
 
 management:
   endpoints:

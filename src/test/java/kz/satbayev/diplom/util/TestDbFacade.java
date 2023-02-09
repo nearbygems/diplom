@@ -38,7 +38,7 @@ public class TestDbFacade {
   }
 
   public <T> T save(TestBuilder<T> builder) {
-    return transactionTemplate.execute(status -> testEntityManager.persist(builder.build()));
+    return transactionTemplate.execute(status -> testEntityManager.persistAndFlush(builder.build()));
   }
 
   public <T> TestBuilder<T> persistedOnce(TestBuilder<T> builder) {

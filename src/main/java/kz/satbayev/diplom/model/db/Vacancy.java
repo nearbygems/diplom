@@ -1,4 +1,4 @@
-package kz.satbayev.diplom.model;
+package kz.satbayev.diplom.model.db;
 
 import lombok.Data;
 
