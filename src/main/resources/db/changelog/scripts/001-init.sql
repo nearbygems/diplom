@@ -1,0 +1,5 @@
+CREATE TABLE vacancy
+(
+    id    BIGSERIAL PRIMARY KEY,
+    title VARCHAR(20) NOT NULL
+);
