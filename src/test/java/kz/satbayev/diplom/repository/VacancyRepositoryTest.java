@@ -1,9 +1,9 @@
 package kz.satbayev.diplom.repository;
 
-import kz.satbayev.diplom.entity.VacancyBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static kz.satbayev.diplom.entity.VacancyBuilder.aVacancy;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class VacancyRepositoryTest extends RepositoryTest {
@@ -15,10 +15,10 @@ public class VacancyRepositoryTest extends RepositoryTest {
   void test() {
 
     db.saveAll(
-        VacancyBuilder.aVacancy()
-                      .withTitle("title1"),
-        VacancyBuilder.aVacancy()
-                      .withTitle("title2")
+        aVacancy()
+            .withTitle("title1"),
+        aVacancy()
+            .withTitle("title2")
               );
 
     final var title1 = repository.findByTitle("title1");

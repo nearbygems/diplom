@@ -21,4 +21,11 @@ logging:
       springframework:
         orm:
           jpa:
-            JpaTransactionManager=DEBUG:
+            JpaTransactionManager=DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
