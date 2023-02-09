@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS vacancy_fkey ON vacancy (company_id)
