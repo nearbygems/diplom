@@ -2,18 +2,21 @@ package kz.satbayev.diplom.model.db;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class Vacancy {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long   id;
   private String title;
+  private Long   salary;
+  private String description;
+  private String requirements;
+
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "company_id", referencedColumnName = "id")
+  private Company company;
 
 }

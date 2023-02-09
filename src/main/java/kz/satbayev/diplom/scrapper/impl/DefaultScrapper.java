@@ -40,12 +40,12 @@ public class DefaultScrapper implements Scrapper {
   public void start() {
 
     getTotalPagesCount().stream()
-                        .flatMapToInt(count -> IntStream.range(0, count - 1))
+                        .flatMapToInt(count -> IntStream.range(0, count))
                         .parallel()
                         .mapToObj(this :: execute)
                         .filter(Objects :: nonNull)
                         .map(converter :: convert)
-                        .flatMap(List :: stream)
+                        .flatMap(List :: parallelStream)
                         .forEach(producer :: produce);
   }
 

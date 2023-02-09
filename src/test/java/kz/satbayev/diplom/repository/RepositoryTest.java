@@ -25,6 +25,7 @@ public class RepositoryTest {
   }
 
   @ClassRule
+  @SuppressWarnings("rawtypes")
   public static PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer("postgres:12.0")
       .withDatabaseName("diplom")
       .withUsername("nearbygems")
@@ -40,7 +41,7 @@ public class RepositoryTest {
                             "spring.datasource.username=" + postgreSQLContainer.getUsername(),
                             "spring.datasource.password=" + postgreSQLContainer.getPassword(),
                             "spring.jpa.database=" + Database.POSTGRESQL,
-                            "spring.jpa.generate-ddl=" + true,
+                            "spring.jpa.generate-ddl=" + false,
                             "spring.liquibase.change-log=" + "classpath:/db/changelog/db.changelog-master.yaml",
                             "spring.liquibase.enabled=" + true,
                             "spring.liquibase.url=" + postgreSQLContainer.getJdbcUrl(),

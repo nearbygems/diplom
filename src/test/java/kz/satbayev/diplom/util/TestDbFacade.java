@@ -22,14 +22,18 @@ public class TestDbFacade {
   public void cleanDatabase() {
     transactionTemplate.execute(status -> {
       JdbcTestUtils.deleteFromTables(jdbcTemplate, "vacancy");
+      JdbcTestUtils.deleteFromTables(jdbcTemplate, "company");
       return null;
     });
   }
 
+
+  @SuppressWarnings("unused")
   public <T> T find(Object id, Class<T> entityClass) {
     return transactionTemplate.execute(status -> testEntityManager.find(entityClass, id));
   }
 
+  @SuppressWarnings("unused")
   public void saveAll(TestBuilder<?>... builders) {
     transactionTemplate.execute(status -> {
       Arrays.stream(builders).forEach(this :: save);
@@ -37,25 +41,9 @@ public class TestDbFacade {
     });
   }
 
+  @SuppressWarnings("unused")
   public <T> T save(TestBuilder<T> builder) {
     return transactionTemplate.execute(status -> testEntityManager.persistAndFlush(builder.build()));
-  }
-
-  public <T> TestBuilder<T> persistedOnce(TestBuilder<T> builder) {
-
-    return new TestBuilder<>() {
-
-      private T entity;
-
-      @Override
-      public T build() {
-        if (entity == null) {
-          entity = save(builder);
-        }
-        return entity;
-      }
-    };
-
   }
 
   @TestConfiguration
