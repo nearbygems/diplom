@@ -11,7 +11,7 @@ public class ParsedVacancy {
   private String description;
   private String requirements;
 
-  private String companyId;
+  private Long   companyId;
   private String companyName;
   private String city;
 
