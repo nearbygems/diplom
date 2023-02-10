@@ -84,7 +84,7 @@ public class DefaultConverter implements Converter {
                                         .map(TextNode.class :: cast)
                                         .filter(node -> !node.isBlank())
                                         .map(TextNode :: text)
-                                        .map(String :: trim).findAny());
+                                        .findAny());
   }
 
   private Optional<Long> salary(Element element) {
@@ -145,8 +145,7 @@ public class DefaultConverter implements Converter {
                    .filter(TextNode.class :: isInstance)
                    .map(TextNode.class :: cast)
                    .filter(node -> !node.isBlank())
-                   .map(TextNode :: text)
-                   .map(String :: trim);
+                   .map(TextNode :: text);
   }
 
 }

@@ -72,7 +72,7 @@ public class DefaultScrapper implements Scrapper {
 
   private Document execute(int page) {
     try {
-      final var url = baseUrl + page;
+      final var url = String.format(baseUrl, page);
       return Jsoup.connect(url).get();
     } catch (IOException e) {
       log.error(String.format("Couldn't get body from page %s", page), e);

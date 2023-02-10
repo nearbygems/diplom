@@ -15,7 +15,7 @@ public class Vacancy {
   private String responsibility;
   private String requirement;
 
-  @OneToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "company_id", referencedColumnName = "id")
   private Company company;
 
