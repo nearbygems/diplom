@@ -12,8 +12,8 @@ public class Vacancy {
   private Long   id;
   private String title;
   private Long   salary;
-  private String description;
-  private String requirements;
+  private String responsibility;
+  private String requirement;
 
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "company_id", referencedColumnName = "id")

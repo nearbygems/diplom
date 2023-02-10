@@ -2,10 +2,7 @@ package kz.satbayev.diplom.builder;
 
 import kz.satbayev.diplom.model.kafka.ParsedVacancy;
 import kz.satbayev.diplom.util.TestBuilder;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.With;
+import lombok.*;
 
 @With
 @Data
@@ -15,7 +12,7 @@ public class ParsedVacancyBuilder implements TestBuilder<ParsedVacancy> {
 
   private Long   id           = 0L;
   private String title        = "Java developer";
-  private String salary       = "ДО 1 000 000 тенге";
+  private Long   salary       = 1_000_000L;
   private String description  = "Some description";
   private String requirements = "Some requirements";
 
@@ -31,8 +28,8 @@ public class ParsedVacancyBuilder implements TestBuilder<ParsedVacancy> {
     vacancy.setId(id);
     vacancy.setTitle(title);
     vacancy.setSalary(salary);
-    vacancy.setDescription(description);
-    vacancy.setRequirements(requirements);
+    vacancy.setResponsibility(description);
+    vacancy.setRequirement(requirements);
 
     vacancy.setCompanyId(companyId);
     vacancy.setCompanyName(companyName);

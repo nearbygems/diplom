@@ -33,8 +33,8 @@ public class VacancyBuilder implements TestBuilder<Vacancy> {
     vacancy.setId(id);
     vacancy.setTitle(title);
     vacancy.setSalary(salary);
-    vacancy.setDescription(description);
-    vacancy.setRequirements(requirements);
+    vacancy.setResponsibility(description);
+    vacancy.setRequirement(requirements);
 
     vacancy.setCompany(company);
 

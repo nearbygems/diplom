@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS vacancy
     "id"           BIGINT PRIMARY KEY,
     "title"        VARCHAR(256) NOT NULL,
     "salary"       BIGINT       NOT NULL,
-    "description"  VARCHAR(512) NOT NULL,
-    "requirements" VARCHAR(512) NOT NULL,
+    responsibility VARCHAR(512) NOT NULL,
+    "requirement"  VARCHAR(512) NOT NULL,
     "company_id"   BIGINT       NOT NULL,
     CONSTRAINT fk_company FOREIGN KEY ("company_id") REFERENCES company ("id")
 );

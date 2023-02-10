@@ -7,9 +7,9 @@ public class ParsedVacancy {
 
   private Long   id;
   private String title;
-  private String salary;
-  private String description;
-  private String requirements;
+  private Long   salary;
+  private String responsibility;
+  private String requirement;
 
   private Long   companyId;
   private String companyName;
