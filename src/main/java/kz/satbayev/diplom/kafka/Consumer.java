@@ -17,7 +17,7 @@ public class Consumer {
   private final Converter      converter;
   private final VacancyService service;
 
-  @KafkaListener(topics = "vacancy", batch = "true")
+  @KafkaListener(topics = "${scrapper.topic}", batch = "true")
   public void consume(List<ParsedVacancy> parsedVacancies) {
 
     final var vacancies = StreamEx.of(parsedVacancies)

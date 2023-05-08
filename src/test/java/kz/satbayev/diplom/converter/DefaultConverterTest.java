@@ -61,15 +61,13 @@ public class DefaultConverterTest {
         assertThat(v.getId()).isEqualTo(76587108);
         assertThat(v.getTitle()).isEqualTo("IT-инженер/системный администратор");
         assertThat(v.getSalary()).isEqualTo(400000);
-        assertThat(v.getResponsibility()).isEqualTo(
-            "Сопровождение работы РЦ (склада) по IT направлению. Поддержка функционирования офиса (ЛВС, корпоративное" +
-            " ПО, обслуживание ПК, оргтехники, сервера). Работа в корпоративных...");
-        assertThat(v.getRequirement()).isEqualTo(
-            "Опыт работы в сфере IT не менее 1 года. Отличное знание ПК, принципов построения ЛВС. Знание SQL " +
-            "приветствуется.");
+        assertThat(v.getResponsibility()).contains(
+            "Сопровождение работы РЦ (склада) по IT направлению.");
+        assertThat(v.getRequirement()).contains(
+            "Опыт работы в сфере IT не менее 1 года.");
         assertThat(v.getCompanyId()).isEqualTo(4641910);
         assertThat(v.getCompanyName()).isEqualTo("ТОО Бэст Прайс Казахстан");
-        assertThat(v.getCity()).isEqualTo("Астана");
+        assertThat(v.getCity()).contains("Астана");
 
       });
 

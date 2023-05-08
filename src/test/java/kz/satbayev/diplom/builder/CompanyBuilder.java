@@ -13,7 +13,6 @@ import lombok.With;
 @NoArgsConstructor(staticName = "aCompany")
 public class CompanyBuilder implements TestBuilder<Company> {
 
-  private Long   id   = 0L;
   private String name = "Satbayev University";
   private String city = "Astana";
 
@@ -22,7 +21,6 @@ public class CompanyBuilder implements TestBuilder<Company> {
 
     final var company = new Company();
 
-    company.setId(id);
     company.setName(name);
     company.setCity(city);
 

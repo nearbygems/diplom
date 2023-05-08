@@ -13,7 +13,7 @@ public class Job {
 
   private final Scrapper scrapper;
 
-  @Scheduled(cron = "0 0 0 * * *")
+  @Scheduled(cron = "0 0 9 * * *")
   public void execute() {
     scrapper.start();
   }

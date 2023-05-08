@@ -17,11 +17,10 @@ import static kz.satbayev.diplom.builder.CompanyBuilder.*;
 @NoArgsConstructor(staticName = "aVacancy")
 public class VacancyBuilder implements TestBuilder<Vacancy> {
 
-  private Long    id           = 0L;
   private String  title        = "Java developer";
   private Long    salary       = 1_000_000L;
-  private String  description  = "Some description";
-  private String  requirements = "Some requirements";
+  private String  responsibility = "Some description";
+  private String  requirement = "Some requirements";
 
   private Company company      = aCompany().build();
 
@@ -30,11 +29,10 @@ public class VacancyBuilder implements TestBuilder<Vacancy> {
 
     final var vacancy = new Vacancy();
 
-    vacancy.setId(id);
     vacancy.setTitle(title);
     vacancy.setSalary(salary);
-    vacancy.setResponsibility(description);
-    vacancy.setRequirement(requirements);
+    vacancy.setResponsibility(responsibility);
+    vacancy.setRequirement(requirement);
 
     vacancy.setCompany(company);
 
