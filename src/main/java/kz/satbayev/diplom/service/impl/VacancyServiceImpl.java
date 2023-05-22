@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultVacancyService implements VacancyService {
+public class VacancyServiceImpl implements VacancyService {
 
   private final VacancyRepository repository;
 
